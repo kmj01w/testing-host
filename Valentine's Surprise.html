@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/xampp/htdocs/spidermangame/valentine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <link href="./Valentine&#39;s Surprise_files/css2" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffdde1;
+            text-align: center;
+            font-family: 'Handlee', cursive;
+            margin: 0;
+        }
+
+        h1 {
+            color: #d6336c;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        /* Sampul Surat Berwarna Pink */
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: #ffb6c1; /* Pink Lembut */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #ff85a2; /* Warna Pink Gelap */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transform-origin: top;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .letter {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            background: #fff0f3;
+            border-radius: 10px;
+            top: 60%;
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .message {
+            font-size: 1.3em;
+            color: #d6336c;
+        }
+
+        .rose {
+            width: 80px;
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .picture {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            margin-top: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            background-color: #ff6699;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+            margin: 5px;
+        }
+
+        .buttons button:hover {
+            background-color: #ff3366;
+        }
+
+        /* Animasi Sampul Terbuka */
+        .open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .open .letter {
+            transform: translateY(-120px);
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+
+    <h1>💖 Happy Valentine's Day 💖</h1>
+
+    <div class="container">
+        <!-- Sampul Surat Pink -->
+        <div class="envelope open" id="valentine-envelope">
+            <div class="flap"></div>
+            <div class="letter">
+                <p class="message">HAPPY V-DAY DANIA SAYANGKUK , WISH U HAVE A NICE DAY , AND ALWAYS BE HAPPY , LOVE U! ❤️</p>
+            </div>
+        </div>
+
+        <!-- Bunga Ros -->
+        <img src="./Valentine&#39;s Surprise_files/bunga.png" alt="Rose" class="rose">
+
+        <!-- Gambar Romantik -->
+        <img src="./Valentine&#39;s Surprise_files/dania.jpeg" alt="Love Picture" class="picture">
+    </div>
+
+    <div class="buttons">
+        <button id="open">Open Envelope</button>
+        <button id="reset">Close Envelope</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const envelope = document.getElementById("valentine-envelope");
+            const btnOpen = document.getElementById("open");
+            const btnReset = document.getElementById("reset");
+
+            function openEnvelope() {
+                envelope.classList.add("open");
+            }
+
+            function closeEnvelope() {
+                envelope.classList.remove("open");
+            }
+
+            btnOpen.addEventListener("click", openEnvelope);
+            btnReset.addEventListener("click", closeEnvelope);
+            envelope.addEventListener("click", openEnvelope);
+        });
+    </script>
+
+
+
+</body></html>
